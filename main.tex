@@ -1,0 +1,137 @@
+\documentclass[12pt]{report}
+% ==============================
+% PLANTILLA DEL PROTOCOLO PARA 
+% PROYECTOS DE INGENIERÍA DE LA 
+% UNIVERSIDAD ANÁHUAC MÉXICO - CADIT - 
+% VERSION 3.0
+
+% IMPORTANTE: Requiere compilador de
+% XeLaTeX o LuaLaTeX siguiendo los pasos:
+% Menú -> Compiler -> XeLaTeX.
+
+% ==============================
+% FUENTES DEL SISTEMA
+% ==============================
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{xcolor}
+
+% ==============================
+% PAQUETES
+% ==============================
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tocloft} % para personalizar índices
+\usepackage{csquotes}
+\usepackage[
+    backend=biber,
+    style=apa
+  ]{biblatex}
+\addbibresource{references.bib} % archivo *.bib necesario para referencias.
+\renewcommand*{\bibname}{Referencias}
+
+% ==============================
+% HABILITAR GLOSARIO
+% ==============================
+%\usepackage[colorlinks]{hyperref}
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,    % Color de enlaces internos
+%    filecolor=magenta, % Color de enlaces a archivos
+%    urlcolor=cyan,     % Color de enlaces web
+%    citecolor=,   % Color de citas bibliográficas
+%}
+%\usepackage[xindy]{glossaries} % glossary
+%\input{glossary} % glossary
+%\makeglossaries % glossary
+
+% ==============================
+% CONFIGURACIÓN GENERAL DEL DOCUMENTO
+% ==============================
+\geometry{top=2.54cm, bottom=2.54cm, left=2.5cm, right=2.5cm}
+\onehalfspacing
+\setlength{\parskip}{6pt}
+
+% ==============================
+% PORTADA
+% ==============================
+\begin{document}
+\begin{titlepage}
+    \centering
+    % Interlineado moderado para que todo quepa en 1 página
+    \setstretch{1.15}
+
+    % Logo (opcional, súbelo como logo.png)
+
+    {\Huge UNIVERSIDAD ANÁHUAC}\\[0.6cm]
+    {\Large Facultad de Ingeniería}\\[0.9 cm]
+
+    % Leyenda DOF con salto EXACTO después de "ESTUDIOS"
+    \parbox{0.92\textwidth}{\centering
+        {\normalsize
+        CON RECONOCIMIENTO DE VALIDEZ OFICIAL DE ESTUDIOS\\
+        OTORGADO POR DECRETO PRESIDENCIAL PUBLICADO EN EL D.O.F.\\DEL 26 DE NOVIEMBRE DE 1982}
+    }\\[1cm]
+
+ \includegraphics[width=0.30\textwidth]{figs/logoA-G.png}\\[1.0cm]
+%\includegraphics[width=0.30\textwidth]{figs/logoA.png}\\[1.0cm]
+
+    % Título principal (en mayúsculas)
+    {\Large \textit{Metodología para el ahorro del consumo energético utilizando dispositivos de automatización}}\\[0.7cm]
+
+    {\Large TRABAJO APLICATIVO}\\[0cm]
+    {\normalsize QUE PARA OBTENER EL GRADO DE}\\[0.6 cm]
+    {\Large MAESTRO EN INGENIERÍA DE GESTIÓN EMPRESARIAL}\\[0.6cm]
+
+    % Bloques centrados
+    {\normalsize \textbf{PRESENTA}}\\[0.25cm]
+    {\normalsize \textit{Nombre alumno}}\\[0.7cm]
+
+    {\small \textbf{ASESOR DEL TRABAJO APLICATIVO}}\\
+    {\small \textit{Nombre Asesor (Incluir grado académico del docente)}}\\[1.8cm]
+
+    % Línea final a extremos en una sola línea
+    \vfill
+    \makebox[\textwidth][s]{\small HUIXQUILUCAN, EDO. DE MÉXICO \hfill JUNIO 2026}
+\end{titlepage}
+
+% ==============================
+% DEDICATORIA Y AGRADECIMIENTOS
+% ==============================
+%\chapter*{Agradecimientos}
+%\addcontentsline{toc}{chapter}{Agradecimientos}
+%A mi Mamá, Papá y Hermana por su apoyo incondicional.
+%\newpage
+
+% ==============================
+% ÍNDICES
+% ==============================
+\tableofcontents %Índice principal
+\newpage
+%\listoffigures % habiitar si creas 10 o más figuras
+%\newpage
+%\listoftables % recomiendo habilitar si creas 10 o más tablas
+%\newpage
+
+% ==============================
+% INCLUSIÓN DE CAPÍTULOS
+% ==============================
+\include{capitulo1}
+\include{capitulo2} % habilitar si cursas Proyectos II
+\include{capitulo3} % habilitar si cursas Proyectos II
+
+
+% ==============================
+% REFERENCIAS
+% ==============================
+\printbibliography[title={Referencias}]
+\addcontentsline{toc}{chapter}{Referencias}
+
+% ==============================
+% GLOSARIO
+% ==============================
+%\printglossaries %habilitar si deseas incluir un glosario
+
+\end{document}
